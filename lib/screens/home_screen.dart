@@ -3,10 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:your_tickets/screens/hotel_screen.dart';
 import 'package:your_tickets/screens/ticket_view.dart';
+import 'package:your_tickets/utils/app_info_list.dart';
 import '../utils/app_styles.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+  const HomeScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -94,7 +95,7 @@ class HomeScreen extends StatelessWidget {
               padding: const EdgeInsets.only(left: 20),
               scrollDirection: Axis.horizontal,
               child: Row(
-                children: const [TicketView(), TicketView(), TicketView()],
+                children: ticketList.map((singleTicket) =>TicketView(ticket: singleTicket)).toList()
               ),
             ),
             const Gap(15),
@@ -119,20 +120,16 @@ class HomeScreen extends StatelessWidget {
                   )
                 ],
               ),
-            )
-            //hotels nearby part
-            ,
+            ),
             const Gap(15),
+            //hotels nearby part
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               padding: const EdgeInsets.only(left: 20),
               child: Row(
-                children: const [
-                  HotelScreen(),
-                  HotelScreen(),
-                  HotelScreen(),
-                ],
-              ),
+                  children: hotelList
+                      .map((singleHotel) => HotelScreen(hotel: singleHotel))
+                      .toList()),
             ),
             const Gap(10)
           ],
