@@ -4,6 +4,8 @@ import 'package:gap/gap.dart';
 import 'package:your_tickets/screens/hotel_screen.dart';
 import 'package:your_tickets/screens/ticket_view.dart';
 import 'package:your_tickets/utils/app_info_list.dart';
+import 'package:your_tickets/utils/app_layout.dart';
+import 'package:your_tickets/widgets/double_text_widget.dart';
 import '../utils/app_styles.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -17,7 +19,8 @@ class HomeScreen extends StatelessWidget {
           children: [
             //upper part
             Container(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
+              padding:
+                  EdgeInsets.symmetric(horizontal: AppLayout.getHeight(25)),
               child: Column(
                 children: [
                   const Gap(50),
@@ -67,25 +70,8 @@ class HomeScreen extends StatelessWidget {
                     ),
                   ),
                   const Gap(40),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        "Upcoming Flights",
-                        style: Styles.headlineStyle2,
-                      ),
-                      InkWell(
-                        onTap: () {
-                          debugPrint("View all tapped");
-                        },
-                        child: Text(
-                          "View all",
-                          style: Styles.textStyle
-                              .copyWith(color: Styles.primaryColor),
-                        ),
-                      )
-                    ],
-                  )
+                  const DoubleTextWidget(
+                      bigText: "Upcoming Flights", smallText: "View all")
                 ],
               ),
             ),
@@ -95,32 +81,15 @@ class HomeScreen extends StatelessWidget {
               padding: const EdgeInsets.only(left: 20),
               scrollDirection: Axis.horizontal,
               child: Row(
-                children: ticketList.map((singleTicket) =>TicketView(ticket: singleTicket)).toList()
-              ),
+                  children: ticketList
+                      .map((singleTicket) => TicketView(ticket: singleTicket))
+                      .toList()),
             ),
             const Gap(15),
             Container(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    "Hotels",
-                    style: Styles.headlineStyle2,
-                  ),
-                  InkWell(
-                    onTap: () {
-                      debugPrint("View all tapped");
-                    },
-                    child: Text(
-                      "View all",
-                      style:
-                          Styles.textStyle.copyWith(color: Styles.primaryColor),
-                    ),
-                  )
-                ],
-              ),
-            ),
+                padding: const EdgeInsets.symmetric(horizontal: 20),
+                child: const DoubleTextWidget(
+                    bigText: "Hotels", smallText: "View all")),
             const Gap(15),
             //hotels nearby part
             SingleChildScrollView(
