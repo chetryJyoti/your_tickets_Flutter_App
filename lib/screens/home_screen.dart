@@ -85,7 +85,7 @@ class HomeScreen extends StatelessWidget {
                       .map((singleTicket) => TicketView(ticket: singleTicket))
                       .toList()),
             ),
-            const Gap(15),
+            const Gap(30),
             Container(
                 padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: const DoubleTextWidget(

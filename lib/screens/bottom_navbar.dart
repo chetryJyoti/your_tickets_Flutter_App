@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:your_tickets/screens/home_screen.dart';
 import 'package:your_tickets/screens/search_screen.dart';
+import 'package:your_tickets/screens/ticket_screen.dart';
 
 class BottomNavbar extends StatefulWidget {
   const BottomNavbar({super.key});
@@ -15,7 +16,7 @@ class _BottomNavbarState extends State<BottomNavbar> {
   static final List<Widget> _widgetOptions = <Widget>[
     const HomeScreen(),
     const SearchScreen(),
-    const Text("Tickets"),
+    const TicketScreen(),
     const Text("Profile")
   ];
   void _onItemTapped(int index) {
