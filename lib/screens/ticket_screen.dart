@@ -124,7 +124,7 @@ class TicketScreen extends StatelessWidget {
                         ],
                       ),
                       const AppColumnLayout(
-                        txtOne: "\$248397",
+                        txtOne: "\$24,839",
                         txtTwo: "Price",
                         alignment: CrossAxisAlignment.end,
                         isColor: true,
@@ -172,6 +172,34 @@ class TicketScreen extends StatelessWidget {
             )
           ],
         ),
+        Positioned(
+          left: AppLayout.getHeight(22),
+          top: AppLayout.getHeight(280),
+          child: Container(
+            padding: EdgeInsets.all(AppLayout.getHeight(3)),
+            decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                border: Border.all(color: Styles.textColor, width: 2)),
+            child: CircleAvatar(
+              maxRadius: 4,
+              backgroundColor: Styles.textColor,
+            ),
+          ),
+        ),
+        Positioned(
+          right: AppLayout.getHeight(22),
+          top: AppLayout.getHeight(280),
+          child: Container(
+            padding: EdgeInsets.all(AppLayout.getHeight(3)),
+            decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                border: Border.all(color: Styles.textColor, width: 2)),
+            child: CircleAvatar(
+              maxRadius: 4,
+              backgroundColor: Styles.textColor,
+            ),
+          ),
+        )
       ]),
     );
   }
