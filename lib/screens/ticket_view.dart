@@ -3,6 +3,7 @@ import 'package:gap/gap.dart';
 import 'package:your_tickets/utils/app_layout.dart';
 import 'package:your_tickets/utils/app_styles.dart';
 import 'package:your_tickets/widgets/colum_layout.dart';
+import 'package:your_tickets/widgets/layout_builder_widget.dart';
 import 'package:your_tickets/widgets/thick_container.dart';
 
 class TicketView extends StatelessWidget {
@@ -47,26 +48,7 @@ class TicketView extends StatelessWidget {
                     child: Stack(children: [
                       SizedBox(
                         height: AppLayout.getHeight(24),
-                        child: LayoutBuilder(builder:
-                            (BuildContext context, BoxConstraints constraints) {
-                          debugPrint(
-                              "the width is ${constraints.constrainWidth()}");
-                          return Flex(
-                              direction: Axis.horizontal,
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              mainAxisSize: MainAxisSize.max,
-                              children: List.generate(
-                                  (constraints.constrainWidth() / 7).floor(),
-                                  (index) => SizedBox(
-                                        width: 3,
-                                        height: 1,
-                                        child: DecoratedBox(
-                                            decoration: BoxDecoration(
-                                                color: isColor == null
-                                                    ? Colors.white
-                                                    : Colors.grey.shade300)),
-                                      )));
-                        }),
+                        child:const AppLayoutBuilderWidget(sections:7)
                       ),
                       Center(
                         child: Transform.rotate(
