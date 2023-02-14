@@ -10,6 +10,11 @@ SEARCH TAB:
 ![search_tab1](https://user-images.githubusercontent.com/102951719/217036436-11b25cdc-0a82-4631-85f7-2358ec9b8524.PNG)
 ![search_tab2](https://user-images.githubusercontent.com/102951719/217036456-d212dcd2-9baa-4fb2-af07-15419417c554.PNG)
 
+TICKET TAB:
+
+![ticket_page1](https://user-images.githubusercontent.com/102951719/218743378-97a52444-eb31-4375-b767-10465e830af2.PNG)
+![ticket_page2](https://user-images.githubusercontent.com/102951719/218743416-2bbed530-0d71-4019-a28d-5c8f39e7e49d.PNG)
+
 
 (Note: this app was originally developed by https://www.dbestech.com/tutorials/flutter-ticket-booking-app 
  This is my first app in flutter i just followed along him for learning purposes.
